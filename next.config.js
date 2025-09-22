@@ -28,6 +28,17 @@ const nextConfig = {
     // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
+
+  // Disable source maps in production to avoid source-map dependency issues
+  productionBrowserSourceMaps: false,
+
+  // Disable source maps in development to avoid source-map dependency issues
+  webpack: (config, { dev }) => {
+    if (!dev) {
+      config.devtool = false;
+    }
+    return config;
+  },
 };
 
 module.exports = nextConfig;
