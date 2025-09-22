@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { getProductById, getOtherProducts } from "../../lib/products";
+import { getProductById, getOtherProducts, products } from "../../lib/products";
 import { notFound } from "next/navigation";
 import ProductDetailClient from "./ProductDetailClient";
 
@@ -19,6 +19,12 @@ export async function generateMetadata({
     title: `${product.name} - Nusaterra Global Resources`,
     description: product.description.substring(0, 160),
   };
+}
+
+export function generateStaticParams() {
+  return products.map((product) => ({
+    productId: product.id,
+  }));
 }
 
 export default async function ProductDetailPage({

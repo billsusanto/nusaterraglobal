@@ -11,6 +11,7 @@ const nextConfig = {
     contentDispositionType: "attachment",
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     qualities: [100],
+    unoptimized: true, // Required for static exports
   },
 
   // Disable TypeScript type checking during build
@@ -29,14 +30,16 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
 
-  // Disable source maps in production to avoid source-map dependency issues
+  // Disable source maps completely
   productionBrowserSourceMaps: false,
 
-  // Disable source maps in development to avoid source-map dependency issues
-  webpack: (config, { dev }) => {
-    if (!dev) {
-      config.devtool = false;
-    }
+  // Enable static exports - the key setting for static websites
+  output: "export",
+
+  // Disable source maps for static exports
+  webpack: (config) => {
+    // Disable source maps in all environments
+    config.devtool = false;
     return config;
   },
 };
