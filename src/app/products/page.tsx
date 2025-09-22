@@ -194,7 +194,7 @@ export default function ProductsPage() {
                     />
                   </div>
                   <div className="ml-3">
-                    <p className="text-base text-black">Receive a proforma invoice for</p>
+                    <p className="text-base text-black">Receive a quote for</p>
                     <p className="font-medium text-lg">
                       your requested products
                     </p>
@@ -237,9 +237,9 @@ export default function ProductsPage() {
                     />
                   </div>
                   <div className="ml-3">
-                    <p className="text-base text-black">After confirmation,</p>
+                    <p className="text-base text-black">After confirmation, we will</p>
                     <p className="font-medium text-lg">
-                      review the Proforma Invoice
+                      send you the Proforma Invoice
                     </p>
                   </div>
                 </div>
