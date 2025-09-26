@@ -237,10 +237,65 @@ export default function ProductsPage() {
                     />
                   </div>
                   <div className="ml-3">
-                    <p className="text-base text-black">After confirmation, we will</p>
-                    <p className="font-medium text-lg">
-                      send you the Proforma Invoice
+                    <p className="text-base text-black">
+                      After confirmation, we will
                     </p>
+
+                    {/* Proforma Invoice as dropdown */}
+                    <div className="group cursor-pointer">
+                      <p className="font-medium text-lg flex items-center">
+                        <span>send you the Proforma Invoice</span>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="h-4 w-4 ml-1 transition-transform duration-200 group-hover:rotate-180 text-primary"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M19 9l-7 7-7-7"
+                          />
+                        </svg>
+                      </p>
+                      <div className="max-h-0 overflow-hidden transition-all duration-300 ease-in-out group-hover:max-h-40">
+                        <div className="pt-2 pb-1 space-y-2">
+                          <p className="text-sm text-gray-700 font-medium">
+                            Optional Terms of Payment:
+                          </p>
+                          <div className="flex items-start">
+                            <span className="text-green-700 text-sm font-medium mr-1">
+                              •
+                            </span>
+                            <div>
+                              <span className="text-green-700 text-sm font-medium">
+                                (T/T)
+                              </span>
+                              <span className="text-sm text-gray-700">
+                                {" "}
+                                - According to negotiation agreement.
+                              </span>
+                            </div>
+                          </div>
+                          <div className="flex items-start">
+                            <span className="text-green-700 text-sm font-medium mr-1">
+                              •
+                            </span>
+                            <div>
+                              <span className="text-green-700 text-sm font-medium">
+                                (L/C)
+                              </span>
+                              <span className="text-sm text-gray-700">
+                                {" "}
+                                - 100% Irrevocable LC at sight.
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -298,10 +353,10 @@ export default function ProductsPage() {
                     />
                   </div>
                   <div className="ml-3">
-                    <p className="text-base text-black">Proceed to production</p>
-                    <p className="font-medium text-lg">
-                      according to contract
+                    <p className="text-base text-black">
+                      Proceed to production
                     </p>
+                    <p className="font-medium text-lg">according to contract</p>
                   </div>
                 </div>
 
@@ -316,7 +371,9 @@ export default function ProductsPage() {
                     />
                   </div>
                   <div className="ml-3">
-                    <p className="text-base text-black">Timely and safe delivery</p>
+                    <p className="text-base text-black">
+                      Timely and safe delivery
+                    </p>
                     <p className="font-medium text-lg">
                       of product to customer
                     </p>
