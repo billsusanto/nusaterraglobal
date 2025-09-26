@@ -3,20 +3,24 @@ import Image from "next/image";
 
 function AboutHero() {
   return (
-    <section className="pt-40 pb-6 px-4 md:px-0">
-      <div className="container-custom grid md:grid-cols-2 gap-8 items-start">
-        <div className="w-full h-[320px] bg-gray-300 rounded-lg" />
+    <section className="pt-32 md:pt-40 pb-6 px-4">
+      <div className="container-custom grid md:grid-cols-2 gap-6 md:gap-8 items-start">
+        <div className="w-full h-[220px] md:h-[320px] bg-gray-300 rounded-lg" />
         <div>
-          <h2 className="text-5xl font-bold mb-6">Who are we?</h2>
-          <p className="text-xl mb-6 leading-normal">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">
+            Who are we?
+          </h2>
+          <p className="text-base md:text-xl mb-4 md:mb-6 leading-normal">
             <span className="font-bold">Nusaterra Global Resources</span> is an
             Indonesia-based commodity trading company specializing in premium,
             export-oriented products.
           </p>
-          <h3 className="text-2xl font-semibold mb-2">Our Commitment:</h3>
-          <p className="text-xl mb-6 leading-normal">
+          <h3 className="text-xl md:text-2xl font-semibold mb-2">
+            Our Commitment:
+          </h3>
+          <p className="text-base md:text-xl mb-4 md:mb-6 leading-normal">
             <span className="font-bold">Reliable Sourcing</span> means we
-            connect Indonesia’s natural resources with global partners. Through{" "}
+            connect Indonesia's natural resources with global partners. Through{" "}
             <span className="font-bold">Strict Quality Control</span>, we ensure
             every product meets international standards. We also prioritize{" "}
             <span className="font-bold">Sustainable Practices</span> in every
@@ -30,16 +34,20 @@ function AboutHero() {
 
 function AboutProvide() {
   return (
-    <section className="py-6 px-4 md:px-0">
-      <div className="container-custom grid md:grid-cols-2 gap-8 items-start">
+    <section className="py-6 px-4">
+      <div className="container-custom grid md:grid-cols-2 gap-6 md:gap-8 items-start">
         <div>
-          <h2 className="text-5xl font-bold mb-6">What do we provide?</h2>
-          <p className="text-xl mb-6 leading-normal">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">
+            What do we provide?
+          </h2>
+          <p className="text-base md:text-xl mb-4 md:mb-6 leading-normal">
             We trade and export a wide range of Indonesian commodities, focusing
             on quality and international standards.
           </p>
-          <h3 className="text-2xl font-semibold mb-2">Core Services:</h3>
-          <ul className="list-disc list-inside space-y-2 text-xl">
+          <h3 className="text-xl md:text-2xl font-semibold mb-2">
+            Core Services:
+          </h3>
+          <ul className="list-disc list-inside space-y-1 md:space-y-2 text-base md:text-xl">
             <li>
               <span className="font-bold">Sourcing & Procurement:</span>{" "}
               Partnering with trusted, certified suppliers.
@@ -54,7 +62,7 @@ function AboutProvide() {
             </li>
           </ul>
         </div>
-        <div className="w-full h-[320px] bg-gray-300 rounded-lg" />
+        <div className="w-full h-[220px] md:h-[320px] bg-gray-300 rounded-lg mt-6 md:mt-0" />
       </div>
     </section>
   );
@@ -62,73 +70,75 @@ function AboutProvide() {
 
 function OurTeam() {
   return (
-    <section className="py-16 px-4 md:px-0">
+    <section className="py-10 md:py-16 px-4">
       <div className="container-custom">
-        <h2 className="text-4xl font-bold text-center mb-12">Our Team</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12">
+          Our Team
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 justify-items-center">
           {/* Justin Siswanto */}
-          <div className="w-96 h-[420px] relative rounded-xl overflow-hidden flex flex-col justify-end">
+          <div className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-[380px] h-[320px] sm:h-[380px] md:h-[420px] relative rounded-xl overflow-hidden flex flex-col justify-end">
             <Image
               src="/team/justin_siswanto.jpeg"
               alt="Justin Siswanto"
               fill
               className="object-cover"
-              sizes="384px"
+              sizes="(max-width: 640px) 280px, (max-width: 768px) 320px, 380px"
               priority
             />
             {/* Gradient overlay for text readability */}
-            <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black/70 to-transparent z-10" />
-            <div className="absolute bottom-0 left-0 w-full flex justify-between items-end p-6 z-20">
-              <div className="text-white text-2xl font-bold leading-tight">
+            <div className="absolute bottom-0 left-0 w-full h-24 sm:h-28 md:h-32 bg-gradient-to-t from-black/70 to-transparent z-10" />
+            <div className="absolute bottom-0 left-0 w-full flex justify-between items-end p-4 sm:p-5 md:p-6 z-20">
+              <div className="text-white text-xl sm:text-xl md:text-2xl font-bold leading-tight">
                 Justin
                 <br />
                 Siswanto
               </div>
-              <div className="text-white text-xl font-normal opacity-90 mb-1">
+              <div className="text-white text-base sm:text-lg md:text-xl font-normal opacity-90 mb-1">
                 Founder
               </div>
             </div>
           </div>
           {/* Aryanto Halim */}
-          <div className="w-96 h-[420px] relative rounded-xl overflow-hidden flex flex-col justify-end">
+          <div className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-[380px] h-[320px] sm:h-[380px] md:h-[420px] relative rounded-xl overflow-hidden flex flex-col justify-end">
             <Image
               src="/team/aryanto_halim.jpeg"
               alt="Aryanto Halim"
               fill
               className="object-cover"
-              sizes="384px"
+              sizes="(max-width: 640px) 280px, (max-width: 768px) 320px, 380px"
               priority
             />
-            <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black/70 to-transparent z-10" />
-            <div className="absolute bottom-0 left-0 w-full flex justify-between items-end p-6 z-20">
-              <div className="text-white text-2xl font-bold leading-tight">
+            <div className="absolute bottom-0 left-0 w-full h-24 sm:h-28 md:h-32 bg-gradient-to-t from-black/70 to-transparent z-10" />
+            <div className="absolute bottom-0 left-0 w-full flex justify-between items-end p-4 sm:p-5 md:p-6 z-20">
+              <div className="text-white text-xl sm:text-xl md:text-2xl font-bold leading-tight">
                 Aryanto
                 <br />
                 Halim
               </div>
-              <div className="text-white text-xl font-normal opacity-90 mb-1">
+              <div className="text-white text-base sm:text-lg md:text-xl font-normal opacity-90 mb-1">
                 Co-Founder
               </div>
             </div>
           </div>
           {/* Martin Siswanto */}
-          <div className="w-96 h-[420px] relative rounded-xl overflow-hidden flex flex-col justify-end">
+          <div className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-[380px] h-[320px] sm:h-[380px] md:h-[420px] relative rounded-xl overflow-hidden flex flex-col justify-end sm:col-span-2 md:col-span-1 sm:mt-4 md:mt-0">
             <Image
               src="/team/martin_siswanto.jpeg"
               alt="Martin Siswanto"
               fill
               className="object-cover"
-              sizes="384px"
+              sizes="(max-width: 640px) 280px, (max-width: 768px) 320px, 380px"
               priority
             />
-            <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black/70 to-transparent z-10" />
-            <div className="absolute bottom-0 left-0 w-full flex justify-between items-end p-6 z-20">
-              <div className="text-white text-2xl font-bold leading-tight">
+            <div className="absolute bottom-0 left-0 w-full h-24 sm:h-28 md:h-32 bg-gradient-to-t from-black/70 to-transparent z-10" />
+            <div className="absolute bottom-0 left-0 w-full flex justify-between items-end p-4 sm:p-5 md:p-6 z-20">
+              <div className="text-white text-xl sm:text-xl md:text-2xl font-bold leading-tight">
                 Martin
                 <br />
                 Siswanto
               </div>
-              <div className="text-white text-xl font-normal opacity-90 mb-1">
+              <div className="text-white text-base sm:text-lg md:text-xl font-normal opacity-90 mb-1">
                 Commisioner
               </div>
             </div>
@@ -141,13 +151,15 @@ function OurTeam() {
 
 function OurGallery() {
   return (
-    <section className="py-16 px-4 md:px-0">
+    <section className="py-10 md:py-16 px-4">
       <div className="container-custom">
-        <h2 className="text-4xl font-bold text-center mb-12">Our Gallery</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="h-64 bg-gray-300 rounded-lg" />
-          <div className="h-64 md:col-span-1 md:h-64 lg:col-span-1 lg:h-64 xl:col-span-1 xl:h-64 bg-gray-300 rounded-lg" />
-          <div className="h-64 bg-gray-300 rounded-lg" />
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12">
+          Our Gallery
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
+          <div className="h-48 sm:h-56 md:h-64 bg-gray-300 rounded-lg" />
+          <div className="h-48 sm:h-56 md:h-64 bg-gray-300 rounded-lg" />
+          <div className="h-48 sm:h-56 md:h-64 sm:col-span-2 md:col-span-1 mt-0 sm:mt-4 md:mt-0 bg-gray-300 rounded-lg" />
         </div>
       </div>
     </section>
@@ -156,7 +168,7 @@ function OurGallery() {
 
 export default function AboutPage() {
   return (
-    <main className="bg-[#f9f9f2] min-h-screen">
+    <main className="bg-[#f9f9f2] min-h-screen pb-4 md:pb-0">
       <AboutHero />
       <AboutProvide />
       <OurTeam />

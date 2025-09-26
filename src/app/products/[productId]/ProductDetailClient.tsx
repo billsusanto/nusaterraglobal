@@ -29,18 +29,15 @@ export default function ProductDetailClient({
   const pathname = usePathname();
 
   return (
-    <div className="bg-[#f9f9f2] min-h-screen pb-16 pt-40">
+    <div className="bg-[#f9f9f2] min-h-screen pb-8 md:pb-16 pt-32 md:pt-40">
       {/* Breadcrumb Navigation */}
       {/* Removed Return link, arrow, and Products / ... breadcrumb */}
 
-      <div className="container-custom">
-        <div className="flex flex-col md:flex-row gap-12">
+      <div className="container-custom px-4 md:px-6">
+        <div className="flex flex-col md:flex-row gap-8 md:gap-12">
           {/* Product Image - Square container */}
-          <div className="md:w-1/3 lg:w-4/12">
-            <div
-              className="bg-white shadow-md rounded-lg overflow-hidden"
-              style={{ maxWidth: "450px" }}
-            >
+          <div className="w-full md:w-1/3 lg:w-4/12 mx-auto md:mx-0 max-w-xs md:max-w-md">
+            <div className="bg-white shadow-md rounded-lg overflow-hidden">
               {/* Fixed square container */}
               <div
                 className="w-full"
@@ -52,8 +49,8 @@ export default function ProductDetailClient({
                       ? "/products/coconut_charcoal_briquettes_square.png"
                       : product.id === "palm-kernel"
                       ? "/products/palm_kernel_expeller_square.png"
-                      : product.id === "sawdust-charcoal"
-                      ? "/products/sawdust_charcoal_square.png"
+                      : product.id === "bbq-charcoal"
+                      ? "/products/bbq_charcoal_square.png"
                       : `/products/${product.id.replace("-", "_")}_square.png`
                   }
                   alt={product.name}
@@ -75,15 +72,17 @@ export default function ProductDetailClient({
           </div>
 
           {/* Product Details */}
-          <div className="md:w-2/3 lg:w-8/12">
-            <h1 className="text-3xl font-bold text-black">{product.name}</h1>
+          <div className="w-full md:w-2/3 lg:w-8/12 mt-6 md:mt-0">
+            <h1 className="text-2xl md:text-3xl font-bold text-black">
+              {product.name}
+            </h1>
 
             {/* Product Variants */}
             <div className="mt-4">
               <div className="flex space-x-2">
                 <button
                   onClick={() => setActiveVariant("premium")}
-                  className={`px-6 py-2 font-bold uppercase rounded-lg border-2 relative transition-all duration-150
+                  className={`px-4 md:px-6 py-1.5 md:py-2 text-sm md:text-base font-bold uppercase rounded-lg border-2 relative transition-all duration-150
                     ${
                       activeVariant === "premium"
                         ? "text-green-700 bg-[#ecf4ec]"
@@ -106,7 +105,7 @@ export default function ProductDetailClient({
                 </button>
                 <button
                   onClick={() => setActiveVariant("standard")}
-                  className={`px-6 py-2 font-bold uppercase rounded-lg border-2 relative transition-all duration-150
+                  className={`px-4 md:px-6 py-1.5 md:py-2 text-sm md:text-base font-bold uppercase rounded-lg border-2 relative transition-all duration-150
                     ${
                       activeVariant === "standard"
                         ? "text-green-700 bg-[#ecf4ec]"
@@ -145,7 +144,7 @@ export default function ProductDetailClient({
                   {product.id === "coconut-charcoal" && (
                     <p className="text-gray-700 text-sm">Shisha/Hookah</p>
                   )}
-                  {product.id === "sawdust-charcoal" && (
+                  {product.id === "bbq-charcoal" && (
                     <p className="text-gray-700 text-sm">
                       BBQ / Industrial Use
                     </p>
@@ -185,12 +184,21 @@ export default function ProductDetailClient({
                       <h3 className="text-xs font-semibold text-gray-700">
                         Shapes/Sizes:
                       </h3>
-                      <p className="text-gray-700 text-sm">
-                        Cubes, Hex sticks, Finger sticks, Pillow BBQ, Hex BBQ
+                      <p className="text-gray-700 text-sm font-semibold">
+                        Cubes{" "}
+                        <span className="text-sm font-normal">
+                          (25mm, 26mm)
+                        </span>
+                        , Hexagonal Stick{" "}
+                        <span className="text-sm font-normal">(20x50 mm)</span>,
+                      </p>
+                      <p className="text-gray-700 text-sm font-semibold">
+                        Finger Stick{" "}
+                        <span className="text-sm font-normal">(18x35 mm)</span>
                       </p>
                     </div>
                   )}
-                  {product.id === "sawdust-charcoal" && (
+                  {product.id === "bbq-charcoal" && (
                     <div>
                       <h3 className="text-xs font-semibold text-gray-700">
                         Types:
@@ -261,7 +269,7 @@ export default function ProductDetailClient({
                 <nav className="flex space-x-4">
                   <button
                     onClick={() => setActiveTab("specification")}
-                    className={`py-1 px-1 text-sm border-b-2 ${
+                    className={`py-1 px-1 text-xs md:text-sm border-b-2 ${
                       activeTab === "specification"
                         ? "border-green-600 font-medium text-green-600"
                         : "border-transparent font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300"
@@ -271,7 +279,7 @@ export default function ProductDetailClient({
                   </button>
                   <button
                     onClick={() => setActiveTab("packaging")}
-                    className={`py-1 px-1 text-sm border-b-2 ${
+                    className={`py-1 px-1 text-xs md:text-sm border-b-2 ${
                       activeTab === "packaging"
                         ? "border-green-600 font-medium text-green-600"
                         : "border-transparent font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300"
@@ -283,7 +291,7 @@ export default function ProductDetailClient({
               </div>
 
               {/* Tabs Content */}
-              <div className="py-3 h-48 overflow-y-auto">
+              <div className="py-3 h-40 md:h-48 overflow-y-auto">
                 {/* Specification Tab Content */}
                 {activeTab === "specification" &&
                   product.id === "coconut-charcoal" && (
@@ -384,7 +392,7 @@ export default function ProductDetailClient({
                   )}
 
                 {activeTab === "specification" &&
-                  product.id === "sawdust-charcoal" && (
+                  product.id === "bbq-charcoal" && (
                     <div>
                       <h3 className="text-xs font-semibold text-gray-700 mb-3">
                         {activeVariant === "premium"
@@ -592,7 +600,7 @@ export default function ProductDetailClient({
                         </ul>
                       </div>
                     )}
-                    {product.id === "sawdust-charcoal" && (
+                    {product.id === "bbq-charcoal" && (
                       <div>
                         <h3 className="text-xs font-semibold text-gray-700 mb-3">
                           Packaging
@@ -653,8 +661,8 @@ export default function ProductDetailClient({
         </div>
 
         {/* Other Products Section */}
-        <section className="mt-16">
-          <h2 className="text-2xl font-bold mb-6">
+        <section className="mt-10 md:mt-16">
+          <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6">
             <span
               style={{
                 background: "linear-gradient(to right, #4D8B31, #E0B83D)",
@@ -668,7 +676,7 @@ export default function ProductDetailClient({
             </span>
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
             {otherProducts.slice(0, 4).map((otherProduct) => (
               <Link
                 key={otherProduct.id}
@@ -682,8 +690,8 @@ export default function ProductDetailClient({
                         ? "/products/coconut_charcoal_briquettes_square.png"
                         : otherProduct.id === "palm-kernel"
                         ? "/products/palm_kernel_expeller_square.png"
-                        : otherProduct.id === "sawdust-charcoal"
-                        ? "/products/sawdust_charcoal_square.png"
+                        : otherProduct.id === "bbq-charcoal"
+                        ? "/products/bbq_charcoal_square.png"
                         : `/products/${otherProduct.id.replace(
                             "-",
                             "_"
@@ -691,13 +699,13 @@ export default function ProductDetailClient({
                     }
                     alt={otherProduct.name}
                     fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                    sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
                     className="object-cover"
                     unoptimized={true}
                   />
                   <div className="absolute inset-0 flex items-end transition-opacity">
-                    <div className="p-4 w-full text-white shadow-text">
-                      <h3 className="font-semibold text-sm md:text-base">
+                    <div className="p-2 sm:p-3 md:p-4 w-full text-white shadow-text">
+                      <h3 className="font-semibold text-xs sm:text-sm md:text-base">
                         {otherProduct.name}
                       </h3>
                     </div>

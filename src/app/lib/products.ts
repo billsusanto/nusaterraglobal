@@ -52,11 +52,11 @@ export const products: Product[] = [
     },
   },
   {
-    id: "sawdust-charcoal",
-    name: "Sawdust Charcoal",
-    image: "/products/sawdust_charchoal.png",
+    id: "bbq-charcoal",
+    name: "BBQ Charcoal",
+    image: "/products/bbq_charcoal.png",
     description:
-      "Crafted from select Indonesian hardwood sawdust, our Sawdust Briquette Charcoal offers long-lasting heat, clean burn, and pure flavor for a refined grilling experience and other industrial usage.",
+      "Crafted from select Indonesian hardwood, our BBQ Charcoal Brisqettes offers long-lasting heat, clean burn, and pure flavor for a refined grilling experience and other industrial usage.",
     specifications: {
       fixedCarbon: "75%+",
       ashContent: "<4%",

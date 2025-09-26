@@ -16,10 +16,10 @@ const catalogProducts = [
     image: "/products/coconut_charcoal_briquettes.png",
   },
   {
-    id: "sawdust-charcoal",
-    name: "Sawdust",
+    id: "bbq-charcoal",
+    name: "BBQ",
     subtitle: "Charcoal",
-    image: "/products/sawdust_charchoal.png",
+    image: "/products/bbq_charcoal.png",
   },
   {
     id: "activated-carbon",

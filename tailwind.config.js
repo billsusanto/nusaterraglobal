@@ -18,6 +18,15 @@ module.exports = {
         "hero-pattern": "url('/images/home_background.jpg')",
         "gradient-border": "linear-gradient(to right, #4D8B31, #E0B83D)",
       },
+      keyframes: {
+        slideDown: {
+          "0%": { transform: "translateY(-100%)" },
+          "100%": { transform: "translateY(0)" },
+        },
+      },
+      animation: {
+        slideDown: "slideDown 0.3s ease-out forwards",
+      },
     },
   },
   plugins: [],

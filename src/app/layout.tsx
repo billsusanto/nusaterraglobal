@@ -3,6 +3,7 @@ import { Montserrat, Outfit } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import WhatsAppFloat from "./components/WhatsAppFloat";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -40,6 +41,7 @@ export default function RootLayout({
         <Navbar />
         <main className="w-full">{children}</main>
         <Footer />
+        <WhatsAppFloat />
       </body>
     </html>
   );

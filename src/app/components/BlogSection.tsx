@@ -19,8 +19,8 @@ const blogPosts = [
     image: "/images/blog2.jpg",
   },
   {
-    id: "indonesian-sawdust",
-    title: "Indonesian Sawdust, The Green Energy Revolution",
+    id: "indonesian-bbq-charcoal",
+    title: "Indonesian BBQ charcoal, The Green Energy Revolution",
     date: "Jun 1st, 2025",
     image: "/images/blog3.jpg",
   },
@@ -29,15 +29,15 @@ const blogPosts = [
 const blogIdToProductSlug = {
   "premium-fuel-shisha": "coconut-charcoal",
   "indonesian-zeolite": "natural-zeolite",
-  "indonesian-sawdust": "sawdust-charcoal",
+  "indonesian-bbq-charcoal": "bbq-charcoal",
 };
 
 const BlogSection = () => {
   const router = useRouter();
   return (
-    <section className="py-20 bg-[#f9f9f2]">
-      <div className="container-custom">
-        <h2 className="text-4xl font-bold mb-10">
+    <section className="py-12 md:py-20 bg-[#f9f9f2]">
+      <div className="container-custom px-4 md:px-6">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 md:mb-10">
           Nusaterra&apos;s{" "}
           <span
             style={{
@@ -52,31 +52,33 @@ const BlogSection = () => {
           </span>
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
           {blogPosts.map((post, index) => (
             <Link
               key={post.id}
               href={`/blog/${post.id}`}
               className="group overflow-hidden transition duration-300 flex flex-col"
             >
-              <div className="relative h-72">
+              <div className="relative h-52 sm:h-60 md:h-72">
                 <Image
                   src={post.image}
                   alt={post.title}
                   fill
                   unoptimized={true}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
                   className="object-cover"
                 />
               </div>
-              <div className="relative flex-grow bg-[#f9f9f2] h-36">
+              <div className="relative flex-grow bg-[#f9f9f2] h-28 sm:h-32 md:h-36">
                 {/* Vertical line (same height for all cards, gray-400 color) */}
                 <div className="absolute top-0 left-0 w-1 h-full bg-gray-400"></div>
 
-                <div className="pl-6 py-6 h-full">
-                  <p className="text-green-700 mb-3 font-medium">{post.date}</p>
+                <div className="pl-4 md:pl-6 py-4 md:py-6 h-full">
+                  <p className="text-green-700 mb-2 md:mb-3 text-sm md:text-base font-medium">
+                    {post.date}
+                  </p>
                   <h3
-                    className={`text-xl font-semibold transition-colors text-black`}
+                    className={`text-base md:text-xl font-semibold transition-colors text-black line-clamp-2`}
                   >
                     <span
                       className="hover:underline cursor-pointer text-black"
