@@ -2,7 +2,6 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import BlogSection from "../../components/BlogSection";
-import Footer from "../../components/Footer";
 
 // Define interfaces for blog content structure
 interface SubSection {
@@ -255,7 +254,7 @@ const blogPosts: BlogPost[] = [
   {
     id: "indonesian-bbq-charcoal",
     title:
-      "Why Indonesian Sawdust Charcoal is the Green Energy Revolution Behind BBQ, Agriculture, and Industry",
+      "Why Indonesian Sawdust Charcoal is the Green Energy Revolution Behind Barbecue, Agriculture, and Industry",
     date: "10/09/2025",
     image: "/images/blog3.jpg",
     content: [
@@ -271,7 +270,7 @@ const blogPosts: BlogPost[] = [
         heading: "Key Applications",
         subSections: [
           {
-            subheading: "1. BBQ & Cooking Fuel",
+            subheading: "1. Barbecue & Cooking Fuel",
             paragraphs: [
               "For barbecue lovers and professional chefs, sawdust charcoal is redefining the grilling experience. Its consistent, high heat ensures food cooks evenly without flare-ups. With low ash residue and long burn times, it makes both backyard cookouts and restaurant kitchens more efficient and enjoyable.",
               "That's why restaurants and households are switching to sawdust charcoal — it delivers a premium grilling experience that combines taste, reliability, and sustainability.",
@@ -306,7 +305,7 @@ const blogPosts: BlogPost[] = [
           "The versatility of sawdust charcoal explains its rise in global demand:",
         ],
         list: [
-          "Restaurants & Households → clean, reliable BBQ fuel.",
+          "Restaurants & Households → clean, reliable Barbecue fuel.",
           "Industrial Users → cost-efficient biomass energy for boilers and kilns.",
           "Briquette Manufacturers → consistent feedstock for premium briquettes.",
           "Farmers & Horticulturists → biochar that enriches soil and increases yields.",
@@ -318,7 +317,7 @@ const blogPosts: BlogPost[] = [
       {
         heading: "Forms of Sawdust Charcoal & Recommended Usage",
         list: [
-          "BBQ & Cooking Fuel (Briquettes / Logs): Easy ignition, long burn time, minimal smoke.",
+          "Barbecue & Cooking Fuel (Briquettes / Logs): Easy ignition, long burn time, minimal smoke.",
           "Industrial Fuel / Energy (Loose Sawdust / Pellets): High calorific value, efficient combustion, renewable alternative to coal.",
           "Charcoal Briquette Production (Powder / Granules): Uniform density and quality for commercial briquette manufacturing.",
           "Soil Amendment / Horticulture (Ground Charcoal / Biochar): Improves fertility, moisture retention, and soil structure.",
@@ -353,11 +352,11 @@ const blogPosts: BlogPost[] = [
       {
         heading: "Partner with Us",
         paragraphs: [
-          "If you are searching for a trusted sawdust charcoal supplier in Indonesia for BBQ fuel, industrial energy, briquette manufacturing, or agricultural use, our products offer a natural, cost-efficient, and eco-friendly solution that continues to drive demand worldwide.",
+          "If you are searching for a trusted sawdust charcoal supplier in Indonesia for Barbecue fuel, industrial energy, briquette manufacturing, or agricultural use, our products offer a natural, cost-efficient, and eco-friendly solution that continues to drive demand worldwide.",
           "At Nusaterra Global Resources, we supply premium sawdust charcoal for multiple industries :",
         ],
         list: [
-          "BBQ & household cooking fuel",
+          "Barbecue & household cooking fuel",
           "Industrial boilers and kilns",
           "Briquette manufacturing feedstock",
           "Soil and horticultural applications",
@@ -557,7 +556,6 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
 
       {/* Other Blogs Section */}
       <BlogSection />
-      <Footer />
     </main>
   );
 }

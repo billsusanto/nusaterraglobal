@@ -1,5 +1,4 @@
 import BlogSection from "../components/BlogSection";
-import Footer from "../components/Footer";
 
 export const metadata = {
   title: "Blog - Nusaterra Global Resources",
@@ -14,7 +13,6 @@ export default function BlogPage() {
 
       {/* Blog Posts Section */}
       <BlogSection />
-      <Footer />
     </main>
   );
 }

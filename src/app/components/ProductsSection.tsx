@@ -15,7 +15,7 @@ const products = [
   },
   {
     id: "bbq-charcoal",
-    name: "BBQ",
+    name: "Barbecue",
     subtitle: "Charcoal",
     image: "/products/bbq_charcoal.png",
   },

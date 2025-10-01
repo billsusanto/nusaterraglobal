@@ -14,15 +14,16 @@ const Navbar = () => {
   const heroObserver = useRef<IntersectionObserver | null>(null);
   const pathname = usePathname();
 
-  // Check if current page is products page, about page, or blog page
+  // Check if current page is products page, about page, gallery page, or blog page
   const isProductsPage =
     pathname === "/products" || pathname.startsWith("/products/");
   const isAboutPage = pathname === "/about";
   const isBlogPage = pathname === "/blog" || pathname.startsWith("/blog/");
+  const isGalleryPage = pathname === "/gallery";
 
   useEffect(() => {
-    // If we're on the products, about, or blog page, always use dark text and fixed position
-    if (isProductsPage || isAboutPage || isBlogPage) {
+    // If we're on the products, about, gallery, or blog page, always use dark text and fixed position
+    if (isProductsPage || isAboutPage || isBlogPage || isGalleryPage) {
       setTextDark(true);
       setPastHeroSection(false); // Ensure we don't apply the slide-down animation on these pages
       return;
@@ -66,11 +67,11 @@ const Navbar = () => {
         heroObserver.current.disconnect();
       }
     };
-  }, [isProductsPage, isAboutPage, isBlogPage]);
+  }, [isProductsPage, isAboutPage, isBlogPage, isGalleryPage]);
 
-  // Force dark text on Products, About, or Blog page, use the dynamic state for other pages
+  // Force dark text on Products, About, Gallery, or Blog page, use the dynamic state for other pages
   const textColor =
-    isProductsPage || isAboutPage || isBlogPage
+    isProductsPage || isAboutPage || isBlogPage || isGalleryPage
       ? "text-black"
       : textDark
       ? "text-black"
@@ -78,12 +79,20 @@ const Navbar = () => {
 
   // Determine if navbar should be fixed/sticky and its appearance
   const shouldBeFixed =
-    pastHeroSection || isProductsPage || isAboutPage || isBlogPage;
+    pastHeroSection ||
+    isProductsPage ||
+    isAboutPage ||
+    isBlogPage ||
+    isGalleryPage;
 
   // Only apply slideDown animation when transitioning from hero section
-  // For other pages (products, about, blog), the navbar is fixed from the start without animation
+  // For other pages (products, about, gallery, blog), the navbar is fixed from the start without animation
   const fixedNavClasses = shouldBeFixed
-    ? pastHeroSection && !isProductsPage && !isAboutPage && !isBlogPage
+    ? pastHeroSection &&
+      !isProductsPage &&
+      !isAboutPage &&
+      !isBlogPage &&
+      !isGalleryPage
       ? "fixed animate-slideDown" // Add animation only when scrolling past hero on homepage
       : "fixed" // No animation on other pages or initial load
     : "absolute"; // In hero section, navbar is absolute positioned
@@ -166,6 +175,18 @@ const Navbar = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <Link
+              href="/gallery"
+              className={`${textColor} text-md font-medium hover:text-secondary transition duration-300`}
+            >
+              GALLERY
+            </Link>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+          >
+            <Link
               href="/blog"
               className={`${textColor} text-md font-medium hover:text-secondary transition duration-300`}
             >
@@ -178,29 +199,39 @@ const Navbar = () => {
         <motion.div
           initial={{ opacity: 0, x: -10 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
           className="hidden md:block"
         >
           <Link
             href="/contact"
             className={`
-              px-7 py-2.5 text-sm font-medium transition duration-300
-              ${
-                isProductsPage ||
-                isAboutPage ||
-                isBlogPage ||
-                (textDark && !isProductsPage && !isAboutPage && !isBlogPage)
-                  ? "text-white border-0"
-                  : textDark
-                  ? "border border-primary text-primary hover:bg-primary hover:text-white"
-                  : "border bg-white bg-opacity-10 text-white hover:bg-secondary hover:bg-opacity-100 hover:border-secondary"
-              }
-            `}
+                px-7 py-2.5 text-sm font-medium transition duration-300
+                ${
+                  isProductsPage ||
+                  isAboutPage ||
+                  isBlogPage ||
+                  isGalleryPage ||
+                  (textDark &&
+                    !isProductsPage &&
+                    !isAboutPage &&
+                    !isBlogPage &&
+                    !isGalleryPage)
+                    ? "text-white border-0"
+                    : textDark
+                    ? "border border-primary text-primary hover:bg-primary hover:text-white"
+                    : "border bg-white bg-opacity-10 text-white hover:bg-secondary hover:bg-opacity-100 hover:border-secondary"
+                }
+              `}
             style={
               isProductsPage ||
               isAboutPage ||
               isBlogPage ||
-              (textDark && !isProductsPage && !isAboutPage && !isBlogPage)
+              isGalleryPage ||
+              (textDark &&
+                !isProductsPage &&
+                !isAboutPage &&
+                !isBlogPage &&
+                !isGalleryPage)
                 ? {
                     background:
                       "linear-gradient(to right, #4D8B31, #E0B83D, #F2C94C)",
@@ -226,7 +257,11 @@ const Navbar = () => {
             {mobileMenuOpen ? (
               <X
                 className={`w-6 h-6 ${
-                  textDark || isProductsPage || isAboutPage || isBlogPage
+                  textDark ||
+                  isProductsPage ||
+                  isAboutPage ||
+                  isBlogPage ||
+                  isGalleryPage
                     ? "text-black"
                     : "text-white"
                 }`}
@@ -234,7 +269,11 @@ const Navbar = () => {
             ) : (
               <Menu
                 className={`w-6 h-6 ${
-                  textDark || isProductsPage || isAboutPage || isBlogPage
+                  textDark ||
+                  isProductsPage ||
+                  isAboutPage ||
+                  isBlogPage ||
+                  isGalleryPage
                     ? "text-black"
                     : "text-white"
                 }`}
@@ -298,6 +337,19 @@ const Navbar = () => {
               transition={{ duration: 0.4, delay: 0.4 }}
             >
               <Link
+                href="/gallery"
+                className="text-black text-lg font-medium"
+                onClick={closeMobileMenu}
+              >
+                GALLERY
+              </Link>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.4, delay: 0.5 }}
+            >
+              <Link
                 href="/blog"
                 className="text-black text-lg font-medium"
                 onClick={closeMobileMenu}
@@ -308,7 +360,7 @@ const Navbar = () => {
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.4, delay: 0.5 }}
+              transition={{ duration: 0.4, delay: 0.6 }}
             >
               <Link
                 href="/contact"

@@ -146,7 +146,7 @@ export default function ProductDetailClient({
                   )}
                   {product.id === "bbq-charcoal" && (
                     <p className="text-gray-700 text-sm">
-                      BBQ / Industrial Use
+                      Barbecue / Industrial Use
                     </p>
                   )}
                   {product.id === "natural-zeolite" && (

@@ -1,0 +1,64 @@
+/* Gallery carousel styles */
+.gallery-carousel {
+  position: relative;
+}
+
+.gallery-carousel .slick-slide {
+  padding: 0 8px;
+}
+
+.gallery-carousel .slick-track {
+  display: flex !important;
+}
+
+.gallery-carousel .slick-slide > div {
+  height: 100%;
+}
+
+/* Make arrows more visible and properly positioned */
+.gallery-carousel .slick-prev,
+.gallery-carousel .slick-next {
+  z-index: 10;
+}
+
+.gallery-carousel .slick-prev {
+  left: 10px;
+}
+
+.gallery-carousel .slick-next {
+  right: 10px;
+}
+
+/* Style for the arrow wrapper */
+.custom-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 4px;
+  background: transparent;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+/* Add indicators at the bottom if needed later */
+.gallery-carousel .carousel-indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.gallery-carousel .carousel-indicators span {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  border-radius: 50%;
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+.gallery-carousel .carousel-indicators span.active {
+  background-color: #4d8b31;
+}

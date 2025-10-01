@@ -10,23 +10,23 @@ const blogPosts = [
     id: "premium-fuel-shisha",
     title: "The Premium Fuel for Shisha and Hookah",
     date: "Sep 15th, 2024",
-    image: "/images/blog1.jpg",
+    image: "/blog/premium_fuel_for_shisha_and_hookah_blog.jpg",
   },
   {
     id: "indonesian-zeolite",
     title: "Indonesian Zeolite the eco friendly mineral.",
     date: "Jan 11th, 2025",
-    image: "/images/blog2.jpg",
+    image: "/blog/zeolite_blog.jpg",
   },
   {
     id: "indonesian-bbq-charcoal",
-    title: "Indonesian BBQ charcoal, The Green Energy Revolution",
+    title: "Indonesian Barbecue Charcoal, The Green Energy Revolution",
     date: "Jun 1st, 2025",
-    image: "/images/blog3.jpg",
+    image: "/blog/barbecue_charcoal_blog.jpg",
   },
 ];
 
-const blogIdToProductSlug = {
+const blogIdToProductSlug: Record<string, string> = {
   "premium-fuel-shisha": "coconut-charcoal",
   "indonesian-zeolite": "natural-zeolite",
   "indonesian-bbq-charcoal": "bbq-charcoal",
@@ -53,7 +53,7 @@ const BlogSection = () => {
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
-          {blogPosts.map((post, index) => (
+          {blogPosts.map((post) => (
             <Link
               key={post.id}
               href={`/blog/${post.id}`}

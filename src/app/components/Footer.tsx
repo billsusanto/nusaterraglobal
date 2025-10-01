@@ -1,19 +1,27 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const products = [
-  "Coconut Charcoal Briquettes",
-  "Sawdust Charcoal",
-  "Activated Carbon",
-  "Natural Zeolite",
-  "Palm Kernel Expeller",
+const productLinks = [
+  { name: "Coconut Charcoal Briquettes", slug: "/products/coconut-charcoal" },
+  { name: "Barbecue Charcoal", slug: "/products/bbq-charcoal" },
+  { name: "Activated Carbon", slug: "/products/activated-carbon" },
+  { name: "Natural Zeolite", slug: "/products/natural-zeolite" },
+  { name: "Palm Kernel Expeller", slug: "/products/palm-kernel" },
 ];
-const blogPosts = [
-  "Coconut Charcoal Briquettes",
-  "Sawdust Charcoal",
-  "Activated Carbon",
-  "Natural Zeolite",
-  "Palm Kernel Expeller",
+
+const blogLinks = [
+  {
+    name: "The Premium Fuel for Shisha and Hookah",
+    slug: "/blog/premium-fuel-shisha",
+  },
+  {
+    name: "Indonesian Zeolite - Eco Friendly Mineral",
+    slug: "/blog/indonesian-zeolite",
+  },
+  {
+    name: "Indonesian Barbecue Charcoal",
+    slug: "/blog/indonesian-bbq-charcoal",
+  },
 ];
 
 const Footer = () => {
@@ -98,9 +106,14 @@ const Footer = () => {
                 OUR PRODUCTS
               </h3>
               <ul className="mb-4 space-y-1">
-                {products.map((p) => (
-                  <li key={p} className="text-xs md:text-sm">
-                    {p}
+                {productLinks.map((product) => (
+                  <li key={product.slug} className="text-xs md:text-sm">
+                    <Link
+                      href={product.slug}
+                      className="hover:text-[#E0B83D] transition-colors duration-300"
+                    >
+                      {product.name}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -110,9 +123,14 @@ const Footer = () => {
                 RECENT BLOG POST
               </h3>
               <ul className="space-y-1">
-                {blogPosts.map((b) => (
-                  <li key={b} className="text-xs md:text-sm">
-                    {b}
+                {blogLinks.map((blog) => (
+                  <li key={blog.slug} className="text-xs md:text-sm">
+                    <Link
+                      href={blog.slug}
+                      className="hover:text-[#E0B83D] transition-colors duration-300"
+                    >
+                      {blog.name}
+                    </Link>
                   </li>
                 ))}
               </ul>
