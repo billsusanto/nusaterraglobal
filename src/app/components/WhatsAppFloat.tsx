@@ -1,6 +1,6 @@
 import React from "react";
 
-const whatsappNumber = "628111180937";
+const whatsappNumber = "6281111809379";
 const message = encodeURIComponent("Hi Nusaterra...");
 
 export default function WhatsAppFloat() {

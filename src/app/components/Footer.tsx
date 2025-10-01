@@ -41,7 +41,7 @@ const Footer = () => {
                 priority
               />
             </Link>
-            <span className="text-base md:text-lg font-semibold mb-1">
+            {/* <span className="text-base md:text-lg font-semibold mb-1">
               Nusaterra
             </span>
             <span className="text-xs tracking-widest mb-2">
@@ -49,7 +49,7 @@ const Footer = () => {
             </span>
             <span className="text-sm mb-4 md:mb-6">
               www.nusaterraglobal.com
-            </span>
+            </span> */}
             <div className="flex space-x-4 mt-1 md:mt-2">
               <a
                 href="https://www.linkedin.com/company/nusaterra-global-resources/"
