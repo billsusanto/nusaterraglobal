@@ -37,7 +37,7 @@ const blogPosts: BlogPost[] = [
     title:
       "Coconut Shell Charcoal Briquettes from Indonesia: The Premium Fuel for Shisha & Hookah",
     date: "10/09/2025",
-    image: "/images/blog1.jpg",
+    image: "/blog/premium_fuel_for_shisha_and_hookah_blog.jpg",
     content: [
       {
         heading: "What Are Coconut Shell Charcoal Briquettes?",
@@ -119,7 +119,7 @@ const blogPosts: BlogPost[] = [
     title:
       "Indonesian Zeolite: The Eco-Friendly Mineral Powering Feed, Farming, and Aquaculture",
     date: "10/09/2025",
-    image: "/images/blog2.jpg",
+    image: "/blog/zeolite_blog.jpg",
     content: [
       {
         heading: "What is Zeolite?",
@@ -256,7 +256,7 @@ const blogPosts: BlogPost[] = [
     title:
       "Why Indonesian Sawdust Charcoal is the Green Energy Revolution Behind Barbecue, Agriculture, and Industry",
     date: "10/09/2025",
-    image: "/images/blog3.jpg",
+    image: "/blog/barbecue_charcoal_blog.jpg",
     content: [
       {
         heading: "What is Sawdust Charcoal?",
