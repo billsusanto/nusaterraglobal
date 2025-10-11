@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -45,115 +45,178 @@ function CustomPrevArrow(props: ArrowProps) {
 }
 
 // Image categorization
-const charcoalImages = [
+const bbqShishaImages = [
   {
-    src: "/gallery/Coconut Shell Charcoal Briquette (Front Image of our gallery).jpeg",
-    alt: "Coconut Shell Charcoal Briquette",
+    src: "/gallery/bbq_shisha/gallery_bbq_shisha_watermark_1.jpg",
+    alt: "BBQ & Shisha Charcoal 1",
   },
   {
-    src: "/gallery/Charcoal (Front image of our Gallery).jpeg",
-    alt: "Charcoal Production",
+    src: "/gallery/bbq_shisha/gallery_bbq_shisha_watermark_2.jpg",
+    alt: "BBQ & Shisha Charcoal 2",
   },
   {
-    src: "/gallery/Charcoal (Gallery).jpeg",
-    alt: "Charcoal Products",
+    src: "/gallery/bbq_shisha/gallery_bbq_shisha_watermark_3.jpg",
+    alt: "BBQ & Shisha Charcoal 3",
   },
   {
-    src: "/gallery/Charcoal (Gallery)(1).jpeg",
-    alt: "Charcoal Sample",
+    src: "/gallery/bbq_shisha/gallery_bbq_shisha_watermark_4.jpg",
+    alt: "BBQ & Shisha Charcoal 4",
   },
   {
-    src: "/gallery/Charcoal (Gallery)(2).jpeg",
-    alt: "Charcoal Quality",
+    src: "/gallery/bbq_shisha/gallery_bbq_shisha_watermark_5.jpg",
+    alt: "BBQ & Shisha Charcoal 5",
   },
   {
-    src: "/gallery/Charcoal (Gallery)(3).jpeg",
-    alt: "Charcoal Processing",
+    src: "/gallery/bbq_shisha/gallery_bbq_shisha_watermark_6.jpg",
+    alt: "BBQ & Shisha Charcoal 6",
   },
   {
-    src: "/gallery/Charcoal (Gallery)(4).jpeg",
-    alt: "Charcoal Production Line",
-  },
-];
-
-const pillowCharcoalImages = [
-  {
-    src: "/gallery/Pillow Charcoal (Gallery).JPG",
-    alt: "Pillow Charcoal",
+    src: "/gallery/bbq_shisha/gallery_bbq_shisha_watermark_7.jpg",
+    alt: "BBQ & Shisha Charcoal 7",
   },
   {
-    src: "/gallery/Pillow Charcoal (Gallery)(1).JPG",
-    alt: "Pillow Charcoal Sample 1",
-  },
-  {
-    src: "/gallery/Pillow Charcoal (Gallery)(2).JPG",
-    alt: "Pillow Charcoal Sample 2",
-  },
-  {
-    src: "/gallery/PIllow Charcoal (Gallery)(3).JPG",
-    alt: "Pillow Charcoal Sample 3",
-  },
-  {
-    src: "/gallery/Pillow Charcoal (Gallery)(4).JPG",
-    alt: "Pillow Charcoal Sample 4",
-  },
-  {
-    src: "/gallery/Pillow Charcoal (Gallery)(5).JPG",
-    alt: "Pillow Charcoal Sample 5",
+    src: "/gallery/bbq_shisha/gallery_bbq_shisha_watermark_8.jpg",
+    alt: "BBQ & Shisha Charcoal 8",
   },
 ];
 
-const zeoliteImages = [
+const charcoalProductionImages = [
   {
-    src: "/gallery/Copy of Zeolite Granular Form (Front image of our Gallery and Product Image 1).jpeg",
-    alt: "Zeolite Granular Form",
+    src: "/gallery/charcoal_production/gallery_charcoal_production_watermark_1.jpg",
+    alt: "Charcoal Production 1",
   },
   {
-    src: "/gallery/Zeolite Granular Form (Gallery).jpeg",
-    alt: "Zeolite Granular Sample",
+    src: "/gallery/charcoal_production/gallery_charcoal_production_watermark_2.jpg",
+    alt: "Charcoal Production 2",
   },
   {
-    src: "/gallery/Zeolite Granular Form (Gallery & Product Image 3).jpeg",
-    alt: "Zeolite Granular Product",
+    src: "/gallery/charcoal_production/gallery_charcoal_production_watermark_3.jpg",
+    alt: "Charcoal Production 3",
   },
   {
-    src: "/gallery/Zeolite Granular Form 4 (Gallery).jpeg",
-    alt: "Zeolite Granular Form 4",
+    src: "/gallery/charcoal_production/gallery_charcoal_production_watermark_4.jpg",
+    alt: "Charcoal Production 4",
   },
   {
-    src: "/gallery/Zeolite Powder (Gallery).jpeg",
-    alt: "Zeolite Powder",
+    src: "/gallery/charcoal_production/gallery_charcoal_production_watermark_5.jpg",
+    alt: "Charcoal Production 5",
   },
   {
-    src: "/gallery/Zeolite Raw Form (Gallery).jpeg",
-    alt: "Zeolite Raw Form",
+    src: "/gallery/charcoal_production/gallery_charcoal_production_watermark_6.jpg",
+    alt: "Charcoal Production 6",
+  },
+  {
+    src: "/gallery/charcoal_production/gallery_charcoal_production_watermark_7.jpg",
+    alt: "Charcoal Production 7",
+  },
+  {
+    src: "/gallery/charcoal_production/gallery_charcoal_production_watermark_8.jpg",
+    alt: "Charcoal Production 8",
   },
 ];
 
-const productionImages = [
+const charcoalProductionFacilityImages = [
   {
-    src: "/gallery/Charcoal Machine (Gallery).jpeg",
-    alt: "Charcoal Production Machine",
+    src: "/gallery/charcoal_production_facility/gallery_charcoal_production_facility_1.jpg",
+    alt: "Charcoal Production Facility 1",
   },
   {
-    src: "/gallery/Charcoal Molding (Gallery).jpeg",
-    alt: "Charcoal Molding Process",
+    src: "/gallery/charcoal_production_facility/gallery_charcoal_production_facility_2.jpg",
+    alt: "Charcoal Production Facility 2",
   },
   {
-    src: "/gallery/Charcoal Molding (Gallery)(1).jpeg",
-    alt: "Charcoal Molding Equipment",
+    src: "/gallery/charcoal_production_facility/gallery_charcoal_production_facility_3.jpg",
+    alt: "Charcoal Production Facility 3",
   },
   {
-    src: "/gallery/Charcoal Production (Gallery).jpeg",
-    alt: "Charcoal Production Facility",
+    src: "/gallery/charcoal_production_facility/gallery_charcoal_production_facility_4.jpg",
+    alt: "Charcoal Production Facility 4",
   },
   {
-    src: "/gallery/Charcoal Raw Material (Gallery).jpeg",
-    alt: "Charcoal Raw Materials",
+    src: "/gallery/charcoal_production_facility/gallery_charcoal_production_facility_5.jpg",
+    alt: "Charcoal Production Facility 5",
   },
   {
-    src: "/gallery/Zeolite Machine (Gallery).jpeg",
-    alt: "Zeolite Processing Machine",
+    src: "/gallery/charcoal_production_facility/gallery_charcoal_production_facility_6.jpg",
+    alt: "Charcoal Production Facility 6",
+  },
+  {
+    src: "/gallery/charcoal_production_facility/gallery_charcoal_production_facility_7.jpg",
+    alt: "Charcoal Production Facility 7",
+  },
+  {
+    src: "/gallery/charcoal_production_facility/gallery_charcoal_production_facility_8.jpg",
+    alt: "Charcoal Production Facility 8",
+  },
+];
+
+const naturalZeoliteImages = [
+  {
+    src: "/gallery/natural_zeolite/gallery_natural_zeolite_watermark_1.jpg",
+    alt: "Natural Zeolite 1",
+  },
+  {
+    src: "/gallery/natural_zeolite/gallery_natural_zeolite_watermark_2.jpg",
+    alt: "Natural Zeolite 2",
+  },
+  {
+    src: "/gallery/natural_zeolite/gallery_natural_zeolite_watermark_3.jpg",
+    alt: "Natural Zeolite 3",
+  },
+  {
+    src: "/gallery/natural_zeolite/gallery_natural_zeolite_watermark_4.jpg",
+    alt: "Natural Zeolite 4",
+  },
+  {
+    src: "/gallery/natural_zeolite/gallery_natural_zeolite_watermark_5.jpg",
+    alt: "Natural Zeolite 5",
+  },
+  {
+    src: "/gallery/natural_zeolite/gallery_natural_zeolite_watermark_6.jpg",
+    alt: "Natural Zeolite 6",
+  },
+  {
+    src: "/gallery/natural_zeolite/gallery_natural_zeolite_watermark_7.jpg",
+    alt: "Natural Zeolite 7",
+  },
+  {
+    src: "/gallery/natural_zeolite/gallery_natural_zeolite_watermark_8.jpg",
+    alt: "Natural Zeolite 8",
+  },
+];
+
+const zeoliteProductionImages = [
+  {
+    src: "/gallery/natural_zeolite_production/gallery_natural_zeolite_production_1.jpg",
+    alt: "Zeolite Production 1",
+  },
+  {
+    src: "/gallery/natural_zeolite_production/gallery_natural_zeolite_production_2.jpg",
+    alt: "Zeolite Production 2",
+  },
+  {
+    src: "/gallery/natural_zeolite_production/gallery_natural_zeolite_production_3.jpg",
+    alt: "Zeolite Production 3",
+  },
+  {
+    src: "/gallery/natural_zeolite_production/gallery_natural_zeolite_production_4.jpg",
+    alt: "Zeolite Production 4",
+  },
+  {
+    src: "/gallery/natural_zeolite_production/gallery_natural_zeolite_production_5.jpg",
+    alt: "Zeolite Production 5",
+  },
+  {
+    src: "/gallery/natural_zeolite_production/gallery_natural_zeolite_production_6.jpg",
+    alt: "Zeolite Production 6",
+  },
+  {
+    src: "/gallery/natural_zeolite_production/gallery_natural_zeolite_production_7.jpg",
+    alt: "Zeolite Production 7",
+  },
+  {
+    src: "/gallery/natural_zeolite_production/gallery_natural_zeolite_production_8.jpg",
+    alt: "Zeolite Production 8",
   },
 ];
 
@@ -163,52 +226,91 @@ interface GalleryImage {
   alt: string;
 }
 
-// Define props for the GalleryCarousel component
-interface GalleryCarouselProps {
+// Gallery categories
+type GalleryCategory = {
+  id: string;
+  label: string;
   images: GalleryImage[];
-  title: string;
-}
+};
 
-function GalleryCarousel({ images, title }: GalleryCarouselProps) {
-  const [slidesToShow, setSlidesToShow] = useState(3);
+// Define gallery categories based directly on folder structure
+const galleryCategories: GalleryCategory[] = [
+  { id: "bbq_shisha", label: "BBQ & Shisha", images: bbqShishaImages },
+  {
+    id: "natural_zeolite",
+    label: "Natural Zeolite",
+    images: naturalZeoliteImages,
+  },
+  {
+    id: "charcoal_production",
+    label: "Charcoal Production",
+    images: charcoalProductionImages,
+  },
+  {
+    id: "charcoal_production_facility",
+    label: "Production Facility",
+    images: charcoalProductionFacilityImages,
+  },
+  {
+    id: "natural_zeolite_production",
+    label: "Zeolite Production",
+    images: zeoliteProductionImages,
+  },
+];
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 640) {
-        setSlidesToShow(1);
-      } else if (window.innerWidth < 1024) {
-        setSlidesToShow(2);
-      } else {
-        setSlidesToShow(3);
-      }
-    };
+export default function GalleryPage() {
+  const [activeCategory, setActiveCategory] = useState<string>("bbq_shisha");
 
-    // Set initial value
-    handleResize();
+  // Get images for active category
+  const activeImages =
+    galleryCategories.find((cat) => cat.id === activeCategory)?.images || [];
 
-    // Add event listener
-    window.addEventListener("resize", handleResize);
-
-    // Clean up
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
+  // Carousel settings
   const settings = {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: slidesToShow,
+    slidesToShow: 3,
     slidesToScroll: 1,
-    autoplay: false, // Disabled auto-scrolling
+    centerMode: true,
+    centerPadding: "30px",
+    autoplay: false,
     arrows: true,
     nextArrow: <CustomNextArrow />,
     prevArrow: <CustomPrevArrow />,
     responsive: [
       {
+        breakpoint: 1440,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          centerPadding: "30px",
+        },
+      },
+      {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 3,
           slidesToScroll: 1,
+          centerPadding: "20px",
+        },
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          centerMode: true,
+          centerPadding: "10px",
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: false,
+          centerPadding: "0px",
         },
       },
       {
@@ -216,41 +318,36 @@ function GalleryCarousel({ images, title }: GalleryCarouselProps) {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          centerMode: false,
+          centerPadding: "0px",
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: false,
+          centerPadding: "0px",
+        },
+      },
+      {
+        breakpoint: 375,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: false,
+          centerPadding: "0px",
         },
       },
     ],
   };
 
   return (
-    <div className="mb-16">
-      <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-10">{title}</h2>
-      <div className="gallery-carousel relative">
-        <Slider {...settings}>
-          {images.map((image: GalleryImage, index: number) => (
-            <div key={index} className="px-2">
-              <div className="aspect-square relative rounded-lg overflow-hidden shadow-md">
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  unoptimized={true}
-                />
-              </div>
-            </div>
-          ))}
-        </Slider>
-      </div>
-    </div>
-  );
-}
-
-export default function GalleryPage() {
-  return (
     <main className="bg-[#f9f9f2] min-h-screen">
       <section className="pt-32 md:pt-40 pb-10 md:pb-16 px-4">
-        <div className="container-custom">
+        <div className="container-custom max-w-[1800px] w-[95%] mx-auto">
+          {/* Gallery Title */}
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-8 md:mb-12">
             <span
               style={{
@@ -266,19 +363,44 @@ export default function GalleryPage() {
             Gallery
           </h1>
 
-          <GalleryCarousel images={charcoalImages} title="Charcoal Products" />
+          {/* Category Tabs */}
+          <div className="gallery-tabs">
+            {galleryCategories.map((category) => (
+              <button
+                key={category.id}
+                className={`gallery-tab ${
+                  activeCategory === category.id ? "active" : ""
+                }`}
+                onClick={() => setActiveCategory(category.id)}
+              >
+                {category.label}
+              </button>
+            ))}
+          </div>
 
-          <GalleryCarousel
-            images={pillowCharcoalImages}
-            title="Pillow Charcoal"
-          />
-
-          <GalleryCarousel images={zeoliteImages} title="Zeolite Products" />
-
-          <GalleryCarousel
-            images={productionImages}
-            title="Production Facilities"
-          />
+          {/* Gallery Carousel */}
+          <div className="gallery-carousel relative">
+            <Slider {...settings}>
+              {activeImages.map((image, index) => (
+                <div key={index} className="px-2">
+                  <div
+                    className="gallery-image-container relative shadow-md"
+                    style={{ aspectRatio: "1.5/1.5" }}
+                  >
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      unoptimized={true}
+                      priority={index < 3} // Load first few images with priority
+                    />
+                  </div>
+                </div>
+              ))}
+            </Slider>
+          </div>
         </div>
       </section>
     </main>

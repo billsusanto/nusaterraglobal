@@ -1,14 +1,93 @@
 /* Gallery carousel styles */
 .gallery-carousel {
   position: relative;
+  width: 90%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .gallery-carousel {
+    width: 90%;
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-carousel {
+    width: 85%;
+  }
 }
 
 .gallery-carousel .slick-slide {
-  padding: 0 8px;
+  padding: 0 20px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .gallery-carousel .slick-slide {
+    padding: 0 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-carousel .slick-slide {
+    padding: 0;
+  }
+}
+
+/* Add overlay for non-center slides */
+.gallery-carousel
+  .slick-slide:not(.slick-center)
+  .gallery-image-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(188, 188, 188, 0.5);
+  z-index: 5;
+  pointer-events: none;
+  border-radius: 0.5rem;
+}
+
+.gallery-carousel .slick-center {
+  transform: scale(1.25);
+  z-index: 10;
+}
+
+@media (max-width: 768px) {
+  .gallery-carousel .slick-center {
+    transform: scale(1.15);
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-carousel .slick-center {
+    transform: scale(1.1);
+  }
 }
 
 .gallery-carousel .slick-track {
   display: flex !important;
+  padding: 60px 0;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .gallery-carousel .slick-track {
+    padding: 40px 0;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-carousel .slick-track {
+    padding: 30px 0;
+    gap: 10px;
+  }
 }
 
 .gallery-carousel .slick-slide > div {
@@ -29,6 +108,16 @@
   right: 10px;
 }
 
+@media (max-width: 768px) {
+  .gallery-carousel .slick-prev {
+    left: -15px;
+  }
+
+  .gallery-carousel .slick-next {
+    right: -15px;
+  }
+}
+
 /* Style for the arrow wrapper */
 .custom-arrow {
   display: flex;
@@ -43,22 +132,92 @@
   transition: transform 0.2s ease;
 }
 
-/* Add indicators at the bottom if needed later */
-.gallery-carousel .carousel-indicators {
+/* Gallery category tabs */
+.gallery-tabs {
   display: flex;
   justify-content: center;
-  margin-top: 15px;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+  padding: 0 0.5rem;
 }
 
-.gallery-carousel .carousel-indicators span {
-  width: 10px;
-  height: 10px;
-  margin: 0 5px;
-  border-radius: 50%;
-  background-color: #ddd;
+@media (max-width: 768px) {
+  .gallery-tabs {
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-tabs {
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.gallery-tab {
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
   cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  white-space: nowrap;
 }
 
-.gallery-carousel .carousel-indicators span.active {
-  background-color: #4d8b31;
+@media (max-width: 768px) {
+  .gallery-tab {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-tab {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+  }
+}
+
+.gallery-tab.active {
+  border-bottom-color: #4d8b31;
+  color: #4d8b31;
+}
+
+.gallery-tab:hover:not(.active) {
+  border-bottom-color: #e0b83d;
+  color: #e0b83d;
+}
+
+/* Center images for gallery */
+.gallery-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  min-height: 320px;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .gallery-image-container {
+    min-height: 300px;
+    border-radius: 0.4rem;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 500px;
+  }
+
+  /* Hide the overlay on mobile as we're showing only one image */
+  .gallery-carousel .slick-slide .gallery-image-container::after {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-image-container {
+    min-height: 260px;
+    border-radius: 0.3rem;
+  }
 }

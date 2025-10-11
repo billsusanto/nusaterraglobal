@@ -14,16 +14,23 @@ const Navbar = () => {
   const heroObserver = useRef<IntersectionObserver | null>(null);
   const pathname = usePathname();
 
-  // Check if current page is products page, about page, gallery page, or blog page
+  // Check if current page is products page, about page, gallery page, blog page, or contact page
   const isProductsPage =
     pathname === "/products" || pathname.startsWith("/products/");
   const isAboutPage = pathname === "/about";
   const isBlogPage = pathname === "/blog" || pathname.startsWith("/blog/");
   const isGalleryPage = pathname === "/gallery";
+  const isContactPage = pathname === "/contact";
 
   useEffect(() => {
-    // If we're on the products, about, gallery, or blog page, always use dark text and fixed position
-    if (isProductsPage || isAboutPage || isBlogPage || isGalleryPage) {
+    // If we're on the products, about, gallery, blog, or contact page, always use dark text and fixed position
+    if (
+      isProductsPage ||
+      isAboutPage ||
+      isBlogPage ||
+      isGalleryPage ||
+      isContactPage
+    ) {
       setTextDark(true);
       setPastHeroSection(false); // Ensure we don't apply the slide-down animation on these pages
       return;
@@ -67,11 +74,15 @@ const Navbar = () => {
         heroObserver.current.disconnect();
       }
     };
-  }, [isProductsPage, isAboutPage, isBlogPage, isGalleryPage]);
+  }, [isProductsPage, isAboutPage, isBlogPage, isGalleryPage, isContactPage]);
 
-  // Force dark text on Products, About, Gallery, or Blog page, use the dynamic state for other pages
+  // Force dark text on Products, About, Gallery, Blog, or Contact page, use the dynamic state for other pages
   const textColor =
-    isProductsPage || isAboutPage || isBlogPage || isGalleryPage
+    isProductsPage ||
+    isAboutPage ||
+    isBlogPage ||
+    isGalleryPage ||
+    isContactPage
       ? "text-black"
       : textDark
       ? "text-black"
@@ -83,7 +94,8 @@ const Navbar = () => {
     isProductsPage ||
     isAboutPage ||
     isBlogPage ||
-    isGalleryPage;
+    isGalleryPage ||
+    isContactPage;
 
   // Only apply slideDown animation when transitioning from hero section
   // For other pages (products, about, gallery, blog), the navbar is fixed from the start without animation
@@ -211,11 +223,13 @@ const Navbar = () => {
                   isAboutPage ||
                   isBlogPage ||
                   isGalleryPage ||
+                  isContactPage ||
                   (textDark &&
                     !isProductsPage &&
                     !isAboutPage &&
                     !isBlogPage &&
-                    !isGalleryPage)
+                    !isGalleryPage &&
+                    !isContactPage)
                     ? "text-white border-0"
                     : textDark
                     ? "border border-primary text-primary hover:bg-primary hover:text-white"
@@ -227,11 +241,13 @@ const Navbar = () => {
               isAboutPage ||
               isBlogPage ||
               isGalleryPage ||
+              isContactPage ||
               (textDark &&
                 !isProductsPage &&
                 !isAboutPage &&
                 !isBlogPage &&
-                !isGalleryPage)
+                !isGalleryPage &&
+                !isContactPage)
                 ? {
                     background:
                       "linear-gradient(to right, #4D8B31, #E0B83D, #F2C94C)",
